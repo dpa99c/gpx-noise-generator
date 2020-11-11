@@ -12,5 +12,9 @@
     "colors": "^1.4.0",
     "minimist": "^1.2.5",
     "xml-js": "^1.6.11"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "gpx-noise-generator": "index.js"
   }
 }
