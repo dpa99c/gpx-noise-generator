@@ -1,7 +1,7 @@
 {
   "name": "gpx-noise-generator",
   "version": "0.0.1",
-  "description": "Applies random noise to GPX location data",
+  "description": "A CLI tool to apply random noise to the position data in a GPX file.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
