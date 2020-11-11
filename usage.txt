@@ -1,0 +1,23 @@
+Synopsis
+
+    gpx-noise-generator [options]
+
+Description
+
+    With no options specified, usage information is displayed.
+
+    To add noise to a GPX file use the --input/-i parameter to specify the filepath of the GPX file.
+
+
+Options
+    -h, --help ...... Displays this help list.
+    -v, --version ...... Displays currently installed version of this module.
+    -i, --input ...... filepath of the source GPX file (required)
+        -o, --output ...... filepath of the output GPX file (containing noise). If not specified, the source GPX file will be overwritten.
+    --probability ...... % probability that noise will be applied to a given point. Defaults to 100% if not specified.
+    --max ...... maximum % noise to apply to a given point. Defaults to 100% if not specified.
+    --min ...... minimum % noise to apply to a given point. Defaults to 0% if not specified.
+    --verbose ...... Displays detailed log output.
+    --debug ...... Displays debug log output.
+
+For more details see the Github page: http://github.com/dpa99c/gpx-noise-generator
