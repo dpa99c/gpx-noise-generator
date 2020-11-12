@@ -12,7 +12,7 @@ const errorHandler = require('./lib/errorHandler.js')();
 
 const DEFAULTS = {
     probability: 100,
-    max: 100,
+    max: 1,
     min: 0
 };
 
@@ -55,9 +55,9 @@ function applyRandom(value){
     const min = args["min"] || DEFAULTS.min;
     const max = args["max"] || DEFAULTS.max;
 
-    let factor = randomNumber(min, max)/100;
-    factor = isProbable(50) ? -factor : factor;
-    return value+(value*factor);
+    let offset = randomNumber(min, max);
+    offset = isProbable(50) ? -offset : offset;
+    return value+offset;
 }
 
 function applyToPoints(points){
@@ -101,7 +101,7 @@ function run(){
     const inputFilePath = args["input"] || args["i"]
     if(!inputFilePath) throw "Input GPX file not specified - use -i or --input argument to specify";
 
-    const outputFilePath = args["output"] || args["o"] || inputFilePath;
+    const outputFilePath = args["output"] || args["o"] || inputFilePath+".noisy";
 
     try{
         const gpx = parseXmlFileToJson(inputFilePath);

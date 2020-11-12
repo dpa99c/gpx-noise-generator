@@ -13,10 +13,12 @@ Options
     -h, --help ...... Displays this help list.
     -v, --version ...... Displays currently installed version of this module.
     -i, --input ...... filepath of the source GPX file (required)
-        -o, --output ...... filepath of the output GPX file (containing noise). If not specified, the source GPX file will be overwritten.
+        -o, --output ...... filepath of the output GPX file (containing noise).
+        If not specified, the output filepath will be the source GPX filepath with ".noisy" appended as the file extension,
+        for example if the input filepath is "foo/my.gpx" then the output filepath will be "foo/my.gpx.noisy".
     --probability ...... % probability that noise will be applied to a given point. Defaults to 100% if not specified.
-    --max ...... maximum % noise to apply to a given point. Defaults to 100% if not specified.
-    --min ...... minimum % noise to apply to a given point. Defaults to 0% if not specified.
+    --max ...... maximum noise in degrees to apply to a given point. Defaults to 1 degree if not specified.
+    --min ...... minimum noise in degrees to apply to a given point. Defaults to 0 degrees if not specified.
     --verbose ...... Displays detailed log output.
     --debug ...... Displays debug log output.
 

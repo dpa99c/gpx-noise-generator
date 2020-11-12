@@ -76,7 +76,8 @@ Filepath of the source GPX file
 
 ### -o or --output
 Filepath to write the output GPX file (containing noise).
-If not specified, the source GPX file will be overwritten.
+If not specified, the output filepath will be the source GPX filepath with `.noisy` appended as the file extension,
+For example if the input name is `foo/my.gpx` then the output filename will be `foo/my.gpx.noisy`
 
     $ gpx-noise-generator --input=/path/to/my.source.gpx --output=/path/to/my.target.gpx
     
@@ -89,22 +90,22 @@ Since this probability is evaluated for each point in the file, the overall numb
     $ gpx-noise-generator --probability=50
     
 ### --max
-Maximum % noise to apply to a given point if probability dictates noise should be applied.
-Defaults to 100% if not specified.
+Maximum noise in degrees to apply to a given point. 
+Defaults to 1 degree if not specified.
 
-Specifies the maximum % of the existing value by which it can be modified.
-e.g. if `lat="50.0"` and  `--max=50`, the resulting noise value will be more than `lat="25.0"` and less than `lat="75.0"`.
+Specifies the maximum amount in degrees by which the existing value can be modified.
+e.g. if `lat="50.0"` and  `--max=1`, the resulting noise value will be between `lat="49.0"` and `lat="51.0"`.
 
-    $ gpx-noise-generator --max=50
+    $ gpx-noise-generator --max=1
     
 ### --min
-Minimum % noise to apply to a given point if probability dictates noise should be applied.
-Defaults to 0% if not specified.
+Minimum noise in degrees to apply to a given point. 
+Defaults to 0 degrees if not specified.
 
-Specifies the minimum % of the existing value by which it can be modified.
-e.g. if `lat="50.0"` and  `--min=50`, the resulting noise value will be less than `lat="25.0"` and more than `lat="75.0"`.
+Specifies the minimum amount in degrees by which the existing value can be modified.
+e.g. if `lat="50.0"` and  `--min=1 --max=2`, the resulting noise value will be between `lat="48.0"` and `lat="49.0"` or between `lat="51.0"` and `lat="52.0"`.
 
-    $ gpx-noise-generator --min=50
+    $ gpx-noise-generator --min=1
 
 ### --verbose
 

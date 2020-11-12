@@ -1,6 +1,6 @@
 {
   "name": "gpx-noise-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A CLI tool to apply random noise to the position data in a GPX file.",
   "main": "index.js",
   "scripts": {
