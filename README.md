@@ -94,6 +94,7 @@ Maximum noise in degrees to apply to a given point.
 Defaults to 1 degree if not specified.
 
 Specifies the maximum amount in degrees by which the existing value can be modified.
+
 e.g. if `lat="50.0"` and  `--max=1`, the resulting noise value will be between `lat="49.0"` and `lat="51.0"`.
 
     $ gpx-noise-generator --max=1
@@ -103,6 +104,7 @@ Minimum noise in degrees to apply to a given point.
 Defaults to 0 degrees if not specified.
 
 Specifies the minimum amount in degrees by which the existing value can be modified.
+
 e.g. if `lat="50.0"` and  `--min=1 --max=2`, the resulting noise value will be between `lat="48.0"` and `lat="49.0"` or between `lat="51.0"` and `lat="52.0"`.
 
     $ gpx-noise-generator --min=1
@@ -121,7 +123,7 @@ Displays debug log output.
 
 # Example usage
 
-    $ gpx-noise-generator --input=/path/to/my.source.gpx --output=/path/to/my.target.gpx --probability=50 --min=5 --max=10
+    $ gpx-noise-generator --input=/path/to/my.source.gpx --output=/path/to/my.target.gpx --probability=25 --min=0.1 --max=0.5
 
 License
 ================
